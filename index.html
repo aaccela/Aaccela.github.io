@@ -827,6 +827,7 @@
 
     /* Chatbot Container */
     .chatbot-container {
+        position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -840,6 +841,10 @@
         overflow: hidden;
         z-index: 999;
         animation: slideUp 0.3s ease;
+    }
+    
+    .chatbot-container.active {
+    display: flex;
     }
 
     @keyframes slideUp {
@@ -1106,7 +1111,8 @@
         const chatbotSend = document.getElementById('chatbotSend');
 
         // Toggle chatbot
-        chatbotButton.addEventListener('click', () => {
+        chatbotButton.addEventListener('click', (e) => {
+            e.preventDefault();
             chatbotContainer.classList.toggle('active');
             chatbotButton.classList.toggle('active');
             if (chatbotContainer.classList.contains('active')) {
