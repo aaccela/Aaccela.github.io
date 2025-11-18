@@ -488,7 +488,8 @@
         bottom: 90px;
         right: 20px;
         width: 400px;
-        height: 600px;
+        height: 500px;
+        max-height: 70vh;
         background: white;
         border-radius: 20px;
         box-shadow: 0 10px 40px rgba(0,0,0,0.3);
@@ -674,10 +675,10 @@
     @media (max-width: 768px) {
         .chat-widget-container {
             width: calc(100vw - 40px);
-            height: calc(100vh - 100px);
-            bottom: 10px;
-            right: 10px;
-            left: 10px;
+            height: 500px;
+            max-height: calc(100vh - 120px);
+            bottom: 90px;
+            right: 20px;
         }
 
         .chat-widget-button {
@@ -965,7 +966,7 @@
       <div class="chat-widget-messages" id="chatWidgetMessages">
           <div class="chat-welcome">
               <h4>Hello! 👋</h4>
-              <p>Ask me about Prabhakar's experience or anything else!</p>
+              <p style="margin: 0; font-size: 14px;">I'm your AI assistant. Ask me about Prabhakar's experience or anything else!</p>
           </div>
       </div>
       
