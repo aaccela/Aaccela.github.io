@@ -957,15 +957,24 @@
   </button>
 
   <!-- Chat Widget Container -->
-  <div class="chat-widget-container" id="chatWidget">
-      <div class="chat-widget-header">
-          <h3>🤖 AI Assistant</h3>
-          <button class="chat-widget-close" onclick="toggleChat()">&times;</button>
-      </div>
+<div class="chat-widget-container" id="chatWidget">
+    <div class="chat-widget-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="chicken.png" alt="Misty" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover; background: white; padding: 2px;">
+            <div>
+                <h3 style="margin: 0;">Misty 🐔</h3>
+                <p style="margin: 0; font-size: 12px; opacity: 0.9;">Your friendly assistant</p>
+            </div>
+        </div>
+        <button class="chat-widget-close" onclick="toggleChat()">&times;</button>
+    </div>
       
       <div class="chat-widget-messages" id="chatWidgetMessages">
           <div class="chat-welcome">
-              <h4>Hello! 👋</h4>
+    <div style="text-align: center; margin-bottom: 10px;">
+        <img src="chicken.png" alt="Misty" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;">
+    </div>
+    <h4>Hello! I'm Misty! 👋🐔</h4>
               <p style="margin: 0; font-size: 14px;">I'm your AI assistant. Ask me about Prabhakar's experience or anything else!</p>
           </div>
       </div>
