@@ -1113,6 +1113,18 @@
         
         showChatTyping();
         
+        // Show warming message if response takes too long
+const warmingTimeout = setTimeout(() => {
+    const typingIndicator = document.getElementById('chatTypingIndicator');
+    if (typingIndicator) {
+        typingIndicator.innerHTML = `
+            <div class="chat-message-content" style="background: white; color: #666; font-style: italic;">
+                ☕ Misty is waking up... just a moment!
+            </div>
+        `;
+    }
+}, 3000);
+
         try {
             const response = await fetch(`${CHAT_API_URL}/chat`, {
                 method: 'POST',
@@ -1130,11 +1142,13 @@
             }
             
             const data = await response.json();
-            
+
+            clearTimeout(warmingTimeout);
             hideChatTyping();
             addChatMessage(data.response, 'assistant');
             
         } catch (error) {
+            clearTimeout(warmingTimeout);
             hideChatTyping();
             addChatMessage('Sorry, I encountered an error. Please try again.', 'assistant');
             console.error('Error:', error);
